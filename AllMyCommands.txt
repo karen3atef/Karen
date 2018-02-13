@@ -1,0 +1,140 @@
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git config --global user.name "Karen Basta"
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git config --global user.email "karen3atef@gmail.com"
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git init
+Initialized empty Git repository in C:/Users/karenatef/Desktop/KarenRepooo/.git/
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git add file1.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git add file2.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git add file3.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git commit -m " Added 3 Files "
+[master (root-commit) c2ccfca]  Added 3 Files
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git rm file3.txt
+rm 'file3.txt'
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git commit -m " Deleted 3rd File "
+[master 1d8ae6b]  Deleted 3rd File
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 file3.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git log
+commit 1d8ae6bb6ce3aef333c7c194958088661e56f692 (HEAD -> master)
+Author: Karen Basta <karen3atef@gmail.com>
+Date:   Tue Feb 13 16:58:04 2018 +0200
+
+     Deleted 3rd File
+
+commit c2ccfca28fef00f4d21e869cf8d3255efdd9cf86
+Author: Karen Basta <karen3atef@gmail.com>
+Date:   Tue Feb 13 16:53:35 2018 +0200
+
+     Added 3 Files
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ ^C
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git revert commit 1d8ae6bb6ce3aef333c7c194958088661e56f692
+fatal: bad revision 'commit'
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git revert 1d8ae6bb6ce3aef333c7c194958088661e56f692
+[master 0deee3f] Revert " Deleted 3rd File"
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git commit -m " Restored 3rd File "
+On branch master
+nothing to commit, working tree clean
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git remote add origin https://github.com/karen3atef/Karen
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/karen3atef/Karen/': Could not resolve host: github.com
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git push origin master
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 9.74 KiB | 997.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/karen3atef/Karen
+ * [new branch]      master -> master
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ touch README.md
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ vim README.md
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git commit -m " Created README.md"
+On branch master
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git checkout -b ReadMe
+Switched to a new branch 'ReadMe'
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (ReadMe)
+$ git commit -m " Made new branch, ReadMe"
+On branch ReadMe
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (ReadMe)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (ReadMe)
+$ git add README.md
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (ReadMe)
+$ git commit -m " Added README.md to ReadMe branch "
+[ReadMe 137a8d1]  Added README.md to ReadMe branch
+ 1 file changed, 7 insertions(+)
+ create mode 100644 README.md
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+
+karenatef@Karen MINGW64 ~/Desktop/KarenRepooo (master)
+$ git merge ReadMe
+Updating 0deee3f..137a8d1
+Fast-forward
+ README.md | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 README.md
+
